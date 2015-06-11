@@ -3,6 +3,6 @@
 
 (function() {
   if (typeof window['CKEDITOR_BASEPATH'] === "undefined" || window['CKEDITOR_BASEPATH'] === null) {
-    window['CKEDITOR_BASEPATH'] = "<%= Ckeditor.base_path %>";
+    window['CKEDITOR_BASEPATH'] = "/assets/ckeditor/";
   }
 }).call(this);
