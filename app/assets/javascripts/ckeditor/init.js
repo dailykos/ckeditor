@@ -11,15 +11,19 @@
     var scriptHash  = '';
 
     try {
+      var cScriptSrc, fileName;
+
       if(document.currentScript) {
-        var cScriptSrc  = document.currentScript.src,
-            fileName    = cScriptSrc.split("/").pop();
-
-        fileName = fileName.split(".js").shift();
-        fileName = fileName.split("-").pop();
-
-        if(fileName) { scriptHash = fileName; }
+        cScriptSrc  = document.currentScript.src,
+        fileName    = cScriptSrc.split("/").pop();
+      } else {
+        fileName    = $('script[src*="dk5-application"]').attr('src');
       }
+
+      fileName = fileName.split(".js").shift();
+      fileName = fileName.split("-").pop();
+
+      if(fileName) { scriptHash = fileName; }
     } catch(e) { /* meh */ }
 
     window['CKEDITOR_CBUSTER'] = scriptHash;
