@@ -24,7 +24,9 @@
       fileName = fileName.split("-").pop();
 
       if(fileName) { scriptHash = fileName; }
-    } catch(e) { /* meh */ }
+    } catch(e) {
+      console.error(e);
+    }
 
     window['CKEDITOR_CBUSTER'] = scriptHash;
   }
